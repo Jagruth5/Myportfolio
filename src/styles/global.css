@@ -1,0 +1,50 @@
+/* Button styles */
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-md font-medium 
+         hover:bg-primary/90 transition-colors inline-flex items-center 
+         justify-center gap-2 shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-primary text-primary px-6 py-3 
+         rounded-md font-medium hover:bg-primary/10 transition-colors 
+         inline-flex items-center justify-center gap-2;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  @apply inline-block w-4 h-4 border-2 border-t-transparent border-primary rounded-full animate-spin;
+}
+
+/* Input focus state */
+input:focus, textarea:focus {
+  @apply border-primary outline-none ring-2 ring-primary/30;
+}
+
+/* Animated underline effect */
+.animated-underline {
+  @apply relative;
+}
+
+.animated-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.animated-underline:hover::after {
+  @apply w-full;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+}
+
+/* Section dividers */
+.wave-divider {
+  @apply w-full h-24 overflow-hidden relative -mb-1;
+}
+
+.wave-divider svg {
+  @apply absolute bottom-0 left-0 w-full h-auto;
+}

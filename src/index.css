@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 221 83% 53%;
+  --secondary: 215 16% 47%;
+  --accent: 174 91% 25%;
+  --background: 0 0% 100%;
+  --foreground: 215 25% 27%;
+  --success: 142 69% 58%;
+  --warning: 38 92% 50%;
+  --error: 0 91% 71%;
+}
+
+.dark {
+  --primary: 217 91% 60%;
+  --secondary: 214 20% 69%;
+  --accent: 173 80% 40%;
+  --background: 215 28% 17%;
+  --foreground: 216 33% 97%;
+  --success: 142 76% 36%;
+  --warning: 38 92% 50%;
+  --error: 0 74% 42%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  section {
+    @apply py-16 md:py-24;
+  }
+}
+
+.custom-cursor {
+  @apply fixed w-8 h-8 rounded-full bg-primary/30 pointer-events-none z-50 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out;
+}
+
+.reveal {
+  @apply opacity-0 transition-all duration-700;
+}
+
+.reveal.active {
+  @apply opacity-100 transform translate-y-0;
+}
+
+.reveal-left {
+  @apply transform translate-x-[-50px] opacity-0 transition-all duration-700;
+}
+
+.reveal-left.active {
+  @apply transform translate-x-0 opacity-100;
+}
+
+.reveal-right {
+  @apply transform translate-x-[50px] opacity-0 transition-all duration-700;
+}
+
+.reveal-right.active {
+  @apply transform translate-x-0 opacity-100;
+}
